@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChuckNorrisAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace ChuckWinForm
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private async void randJokeBtn_Click(object sender, EventArgs e)
+        {
+            var joke =await ChuckNorrisClient.GetRandomJoke();
+            MessageBox.Show(joke.JokeText, "Joke");
         }
     }
 }

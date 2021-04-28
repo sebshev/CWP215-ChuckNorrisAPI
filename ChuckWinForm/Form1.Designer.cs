@@ -30,6 +30,7 @@ namespace ChuckWinForm
         private void InitializeComponent()
         {
             this.categorieCmbBox = new System.Windows.Forms.ComboBox();
+            this.randJokeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // categorieCmbBox
@@ -41,11 +42,22 @@ namespace ChuckWinForm
             this.categorieCmbBox.TabIndex = 0;
             this.categorieCmbBox.Text = "Categories";
             // 
+            // randJokeBtn
+            // 
+            this.randJokeBtn.Location = new System.Drawing.Point(221, 176);
+            this.randJokeBtn.Name = "randJokeBtn";
+            this.randJokeBtn.Size = new System.Drawing.Size(155, 36);
+            this.randJokeBtn.TabIndex = 1;
+            this.randJokeBtn.Text = "Random Joke";
+            this.randJokeBtn.UseVisualStyleBackColor = true;
+            this.randJokeBtn.Click += new System.EventHandler(this.randJokeBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.randJokeBtn);
             this.Controls.Add(this.categorieCmbBox);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +69,7 @@ namespace ChuckWinForm
         #endregion
 
         private System.Windows.Forms.ComboBox categorieCmbBox;
+        private System.Windows.Forms.Button randJokeBtn;
     }
 }
 
