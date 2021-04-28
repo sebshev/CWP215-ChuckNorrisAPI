@@ -18,14 +18,19 @@ namespace ChuckWinForm
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+            var categories = await ChuckNorrisClient.GetCategories();
+            foreach (var c in categories)
+            {
+                categorieCmbBox.Items.Add(c);
+            }
+            
         }
 
         private async void randJokeBtn_Click(object sender, EventArgs e)
         {
-            var joke =await ChuckNorrisClient.GetRandomJoke();
+            var joke = await ChuckNorrisClient.GetRandomJoke();
             MessageBox.Show(joke.JokeText, "Joke");
         }
     }
